@@ -1,0 +1,242 @@
+* { box-sizing: border-box;}
+html, body { margin: 0; padding: 0; height: 100%; background-size: cover;}
+.btn {
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid silver;
+  font-size: 18px;
+  height: 37px;
+  line-height: 37px;
+  vertical-align: top;
+  font-size: 12px;
+}
+
+.wave {
+  opacity: .4;
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  background: #0af;
+  width: 4000px;
+  height: 4000px;
+  margin-left: -2000px;
+
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  opacity: 0.3;
+  transition-duration: 2s;
+  transition-property: margin-bottom;
+  transition-timing-function: ease;
+  z-index: -99999;
+  margin-bottom: -3700px;
+  animation: rotate 20000ms infinite linear;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+.photo button{
+  background-color: #444444;
+}
+input[type='text'], input[type='email'], input[type='password'], textarea {
+  border-radius: 4px;
+  height: 37px;
+  padding: 10px;
+  border: 1px solid silver;
+}
+.container { width: 100%; height: 100%; }
+.input-group { margin-bottom: 15px; }
+.input-group label { width: 25%; display: inline-block; }
+.input-group input { width: 70%; }
+.half { float: left; width: 50%; margin: 10px 0; color: palegoldenrod; text-align: center;}
+.foll-box{
+  background-color: slateblue;
+  text-align: center;
+  margin: 10px 0px;
+  text-align: center;
+  font-family: Consolas, monospace;
+  border: 5px ridge steelblue;
+}
+#join { float: right; }
+.profile-wrap {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0;
+}
+.profile {
+  text-align: left;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid gold;
+  background: rgb(255, 219, 57);
+}
+#my-profile{margin-left: 5%; width: 45%; background-color: slateblue; text-align: center; color: palegoldenrod; font-size: 18px;}
+#logout{margin-left: 5%; width: 90%; background-color: slateblue; text-align: center; color: palegoldenrod; font-size: 18px;}
+#tokdil{width: 45%; background-color: slateblue; text-align: center; color: palegoldenrod; font-size: 18px;}
+.user-name {padding-bottom: 2%; text-align: center; font-weight: bold; font-size: 28px; color: royalblue; font-size: 38px;}
+.count { font-weight: bold; color: rgb(251, 255, 0); font-size: 18px; }
+.timeline {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  border-radius: 4px;
+  vertical-align: top;
+}
+@media screen and (min-width: 800px) { .timeline { width: 500px; } }
+#twit-form {
+  border-bottom: 1px solid gold;
+  padding: 10px;
+  background:rgb(255, 219, 57);
+  overflow: hidden;
+}
+#Tokdil-list{
+  width: 100%;
+  background: gold;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+.tokdil-box{
+  width: 100%;
+  background: gold;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+.tok-shop{
+  width: 100%;
+  padding-top: 2%;
+  height: 50px;
+  background: slateblue;
+  border: 1px solid #444444;
+  text-align: center;
+  font-weight: bold;
+  color: palegoldenrod;
+  font-size: 15px;
+}
+
+.input-group label{
+  padding-top: 2%;
+  height: 50px;
+  background: slateblue;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+  color: palegoldenrod;
+}
+
+.input-group input{
+  padding-top: 2%;
+  height: 50px;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+#register{
+  margin-left: 5%;
+  width: 90%;
+  background: cornflowerblue;
+  color: palegoldenrod;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+#join-btn{
+  margin-left: 5%;
+  width: 90%;
+  background: cornflowerblue;
+  color: palegoldenrod;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+#home-btn{
+  margin-left: 5%;
+  width: 90%;
+  background: cornflowerblue;
+  color: palegoldenrod;
+  border: 1px solid #444444;
+  text-align: center;
+  font-size: 15px;
+}
+
+#Tokdil-list td{
+  border: 1px solid #444444;
+}
+#Tokdil-list td .btn{
+  background-color: slateblue;
+  font-size: 15px;
+  font-weight: bold;
+  color: palegoldenrod;
+}
+
+.name-box{
+  margin: 5%; background-color: papayawhip;  border-radius: 4px;
+}
+
+#img-preview { max-width: 100%; }
+#img-label {
+  float: left;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);;
+  padding: 0 10px;
+  color: palegoldenrod;
+  font-size: 18px;
+  height: 37px;
+  background-color: slateblue;
+  text-align: center;
+  width: 45%;
+  line-height: 37px;
+}
+#img { display: none; }
+#twit { width: 100%; min-height: 72px; height: 150px; }
+#twit-btn {
+  float: right;
+  color: palegoldenrod;
+  font-size: 18px;
+  background-color: slateblue;
+  border: none;
+  width: 45%;
+}
+.twit {
+  border: 1px solid silver;
+  border-radius: 4px;
+  background-color: burlywood;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.twit-author { font-size: 15px; width: 100%; text-align: center; display: inline-block; font-weight: bold; margin-right: 10px; }
+.twit-follow {
+  padding: 1px 5px;
+  background: #fff;
+  border: 1px solid silver;
+  border-radius: 5px;
+  color: gold;
+  font-size: 12px;
+  cursor: pointer;
+}
+.twit-content{
+  width: 100%; text-align: center; font-size: 20px;
+}
+.twit-img { text-align: center; }
+.twit-img img { max-width: 75%; }
+.error-message { color: gold;; font-weight: bold; }
+#search-form { text-align: right; }
+#join-form { padding: 10px; text-align: center; }
+#hashtag-form { text-align: right; }
+footer { text-align: center; }

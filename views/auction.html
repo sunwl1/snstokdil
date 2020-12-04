@@ -1,0 +1,21 @@
+{% extends 'auctionLay.html' %}
+
+{% block content %}
+  <div class="timeline">
+    <form action="/Tokdil" id="Tokdil-form" method="post" enctype="multipart/form-data">
+      <div class="input-group">
+        <label for="Tokdil-name">상품명</label>
+        <input type="text" id="Tokdil-name" name="name" required autofocus>
+      </div>
+      <div class="input-group photo-group">
+        <label for="Tokdil-photo">상품 사진</label>
+        <input type="file" id="Tokdil-photo" class="photo"  name="img" required>
+      </div>
+      <div class="input-group">
+        <label for="Tokdil-price">톡딜 가격</label>
+        <input type="number" id="Tokdil-price" name="price" required>
+      </div>
+      <button id="join-btn" class="btn" type="submit">상품 등록</button>
+    </form>
+  </div>
+{% endblock %}

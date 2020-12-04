@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-wrap">
+        <div class="profile">
+          {% if user and user.id %}
+          <a href="/" id="home-btn" class="btn">홈으로</a>
+          <div class="name-box">
+            <div class="user-name">{{user.nick}}</div>
+          </div>
+            <input type="hidden" id="my-id" value="user.id">
+            <a href="/auth/logout" id="logout" class="btn">로그아웃</a>
+            <a href="/auth/Tokdil" id="register" class="btn">톡딜 목록</a>
+            <a href="/auction" id="register" class="btn">상품 등록</a>
+            <a href="/list" id="register" class="btn">구매 목록</a>
+          {% else %}
+            <form action="/auth/login" id="login-form" method="post">
+              <div class="input-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required autofocus>
+              </div>
+              <div class="input-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+              </div>
+              <a href="/join" id="join" class="btn">회원가입</a>
+              <button id="login" class="btn" type="submit">로그인</button>
+            </form>
+          {% endif %}
+        </div>
+        <footer>
+        </footer>
+        {% block Tokdil %}
+        {% endblock %}
+      </div>
+      {% block content %}
+      {% endblock %}
+      <span class="wave"></span>
+    </div>
+    <script>
+      document.body.style.backgroundImage = 'url("/img/mainPage.png")';
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get('loginError')) {
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      };
+    </script>
+  </body>
+</html>

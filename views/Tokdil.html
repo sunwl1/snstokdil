@@ -1,0 +1,51 @@
+{% extends 'auctionLay.html' %}
+
+{% block content %}
+  <div class="timeline">
+    <div class="tokdil-box">
+      <h2>톡딜 진행 목록</h2>
+    </div>
+    <table id="Tokdil-list">
+      <tr>
+        <th>상품명</th>
+        <th>이미지</th>
+        <th>톡딜 가격</th>
+        <th>종료 시간</th>
+        <th>참여</th>
+      </tr>
+      {% for Tokdil in Tokdils %}
+        <tr>
+          <td>{{Tokdil.name}}</td>
+          <td>
+            <img src="/img/{{Tokdil.img}}">
+          </td>
+          <td>{{Tokdil.price}}</td>
+          <td class="time" data-start="{{Tokdil.createdAt}}">00:00:00</td>
+          <td>
+            <a href="/Tokdil/{{Tokdil.id}}" class="enter btn">톡딜 참여!</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <script src="https://unpkg.com/event-source-polyfill/src/eventsource.min.js"></script>
+  <script>
+    const es = new EventSource('/sse');
+    es.onmessage = function (e) {
+      document.querySelectorAll('.time').forEach((td) => {
+        const end = new Date(td.dataset.start);
+        const server = new Date(parseInt(e.data, 10));
+        end.setDate(end.getDate() + 1);
+        if (server >= end) {
+          return td.textContent = '00:00:00';
+        } else {
+          const t = end - server;
+          const seconds = ('0' + Math.floor((t / 1000) % 60)).slice(-2);
+          const minutes = ('0' + Math.floor((t / 1000 / 60) % 60)).slice(-2);
+          const hours = ('0' + Math.floor((t / (1000 * 60 * 60)) % 24)).slice(-2);
+          return td.textContent = hours + ':' + minutes + ':' + seconds ;
+        }
+      });
+    };
+  </script>
+{% endblock %}

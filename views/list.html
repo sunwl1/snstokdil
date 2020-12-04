@@ -1,0 +1,25 @@
+{% extends 'auctionLay.html' %}
+
+{% block content %}
+  <div class="timeline">
+    <div class="tokdil-box">
+      <h2>구매 목록</h2>
+    </div>
+    <table id="Tokdil-list">
+      <tr>
+        <th>상품명</th>
+        <th>사진</th>
+        <th>할인가</th>
+      </tr>
+      {% for tokdil in tokdils %}
+        <tr>
+          <td>{{tokdil.name}}</td>
+          <td>
+            <img src="/img/{{tokdil.img}}">
+          </td>
+          <td>{{tokdil.Auctions[0].bid}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}
